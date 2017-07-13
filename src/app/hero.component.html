@@ -1,0 +1,9 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h2>My Heroes</h2>
+<ul class="heroes" >
+  <li *ngFor="let hero of aHeroes" (click)="onSelect(hero)" [class.selected]="hero === oSelectedHero">
+    <!-- each hero goes here -->
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+<hero-detail [oHero]="oSelectedHero"></hero-detail><!-- 父子组件通信，将父组件的oSelectedHero对象绑定到子组件的oHero对象上。现在console不会报错了 -->
