@@ -6,4 +6,9 @@
     <span class="badge">{{hero.id}}</span> {{hero.name}}
   </li>
 </ul>
-<hero-detail [oHero]="oSelectedHero"></hero-detail><!-- 父子组件通信，将父组件的oSelectedHero对象绑定到子组件的oHero对象上。现在console不会报错了 -->
+<div *ngIf="oSelectedHero">
+  <h2>
+    {{oSelectedHero.name | uppercase}} is my hero
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
